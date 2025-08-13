@@ -9,7 +9,7 @@
 
 ## 🎯 Visão Geral do Projeto
 
-Este projeto aborda um dos desafios mais críticos para o varejo online: **entender o comportamento do cliente para prever a sua intenção de compra**. Utilizando um dataset com mais de 12.000 sessões de utilizadores num site de e-commerce, o objetivo é construir um modelo de Machine Learning capaz de classificar se uma sessão terminará em uma compra (`Revenue = True`) ou não.
+Este projeto aborda um dos desafios mais críticos para o varejo online: **entender o comportamento do cliente para prever a sua intenção de compra**. Utilizando um dataset com mais de 12.000 sessões de utilizadores num site de e-commerce, o objetivo é construir um modelo de Machine Learning capaz de classificar se uma sessão terminará em uma compra ou não.
 
 O trabalho demonstra um fluxo completo de ciência de dados para um problema de classificação, incluindo pré-processamento de dados, uma análise exploratória detalhada para gerar insights, e a comparação de múltiplos algoritmos para encontrar o modelo com a melhor performance preditiva.
 
@@ -19,8 +19,8 @@ O trabalho demonstra um fluxo completo de ciência de dados para um problema de 
 
 * **Análise Exploratória de Dados (EDA):** Investigação aprofundada sobre como diferentes features (como tipo de visitante, mês da visita e métricas de navegação) se correlacionam com a probabilidade de compra.
 * **Pré-processamento Robusto:** Tratamento de variáveis categóricas com `OneHotEncoder` e padronização de features numéricas com `StandardScaler` para otimizar a performance dos modelos.
-* **Comparação Abrangente de Modelos:** Avaliação e comparação de 5 algoritmos de classificação diferentes: `Regressão Logística`, `SVM`, `KNN`, `Random Forest` e `XGBoost`.
-* **Métricas de Avaliação de Classificação:** Uso de métricas apropriadas como Acurácia, Precisão, Recall, F1-Score e a Curva ROC para uma avaliação completa do desempenho dos modelos.
+* **Comparação Abrangente de Modelos:** Avaliação e comparação de 2 algoritmos de classificação diferentes: `Regressão Logística` e `Random Forest`.
+* **Métricas de Avaliação de Classificação:** Uso de métricas apropriadas como Acurácia, Precisão, Recall e F1-Score.
 * **Otimização com `GridSearchCV`:** Busca sistemática dos melhores hiperparâmetros para o modelo campeão, maximizando sua capacidade preditiva.
 
 ---
@@ -32,34 +32,23 @@ O trabalho demonstra um fluxo completo de ciência de dados para um problema de 
     * `Pandas` & `NumPy` para manipulação de dados.
     * `Matplotlib` & `Seaborn` para visualização.
     * `Scikit-learn` para pré-processamento, modelagem e avaliação.
-    * `XGBoost` para o modelo de gradient boosting.
+    * `Logistic Regression` e `RandomForest` para o modelo de gradient boosting.
 * **Ambiente:** Jupyter Notebook
-
----
-
-## 📊 Principais Descobertas (EDA)
-
-A análise exploratória dos dados revelou insights importantes sobre os fatores que levam a uma compra:
-
-* **💻 `PageValues` é Rei:** A métrica `PageValues` (o valor médio de uma página visitada antes de uma transação) é o indicador mais forte de uma intenção de compra. Sessões que resultam em compra têm um valor de `PageValues` drasticamente mais alto.
-* **↩️ Visitantes Recorrentes Convertem Mais:** Embora a maioria dos visitantes sejam novos (`New_Visitor`), os `Returning_Visitor` têm uma taxa de conversão (compra) proporcionalmente maior.
-* **🗓️ Sazonalidade de Compras:** Certos meses, como Maio e Novembro, apresentam um volume de compras significativamente maior, indicando o impacto de datas comemorativas ou promoções.
 
 ---
 
 ## 🤖 Performance do Modelo Campeão
 
-Após a comparação e otimização, o modelo **XGBoost Classifier** foi coroado o campeão, demonstrando a melhor combinação de métricas de performance para prever a intenção de compra.
+Após a comparação e otimização, o modelo **RandomForest** foi coroado o campeão, demonstrando a melhor combinação de métricas de performance para prever a intenção de compra.
 
-| Métrica       | Score (XGBoost Otimizado) |
+| Métrica       | Score (Random Forest Otimizado) |
 |---------------|---------------------------|
-| **Acurácia** | **90.47%** |
-| **Precisão** | **68.27%** |
-| **Recall** | **63.38%** |
-| **F1-Score** | **65.73%** |
-| **AUC-ROC** | **0.93** |
+| **Acurácia** | **89.71%** |
+| **Precisão** | **65.87%** |
+| **Recall** | **62.68%** |
+| **F1-Score** | **64.24%** |
 
-A performance robusta do XGBoost, especialmente o alto valor de AUC-ROC, confirma a sua capacidade de distinguir eficazmente entre sessões que resultarão em compra e as que não resultarão.
+A performance robusta do RandomForest, especialmente o alto valor de acurácia, confirma a sua capacidade de distinguir eficazmente entre sessões que resultarão em compra e as que não resultarão.
 
 ---
 
